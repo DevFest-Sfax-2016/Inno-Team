@@ -1,12 +1,4 @@
 {
-  "name": "ionTravel",
-  "app_id": "c135d8a8",
-  "gulpStartupTasks": [
-    "sass",
-    "watch"
-  ],
-  "watchPatterns": [
-    "www/**/*",
-    "!www/lib/**/*"
-  ]
+  "name": "sample",
+  "app_id": ""
 }
