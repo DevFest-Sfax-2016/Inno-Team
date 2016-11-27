@@ -1,5 +1,5 @@
 <ion-view view-title="Login" align-title="left">
-    <ion-content  ng-controller="LoginCtrl" style="background: 0% 0% / cover rgba(158, 158, 158, 0.48);
+    <ion-content style="background: 0% 0% / cover rgba(158, 158, 158, 0.48);
 }; background-size: cover;">
         <div class="hero no-header flat">
             <div class="content">
@@ -8,15 +8,16 @@
             </div>
         </div>
         <div class="list">
-            <ion-md-input placeholder="Username" highlight-color="balanced" type="text" ng-model="maill" id="maill"></ion-md-input>
-            <ion-md-input placeholder="Password" highlight-color="energized" type="password" ng-model="pass"></ion-md-input>
+            <ion-md-input placeholder="Username" highlight-color="balanced" type="text"></ion-md-input>
+            <ion-md-input placeholder="Password" highlight-color="energized" type="password"></ion-md-input>
         </div>
         <div class="padding">
-            <button  class="button button-full button-assertive ink" ng-click="test()">Login</button>
-			 <button ui-sref="app.signup" class="button button-full button-calm ink">Sign UP</button>
+            <button ui-sref="app.profile" class="button button-full button-assertive ink" ng-click="test()">Login</button>
         </div>
-		
-
+        <div class="button-bar social-login">
+            <button class="button button-small button-border icon-left ion-social-google button-assertive-900">Google+</button>
+            <button class="button button-small button-border icon-left ion-social-twitter button-calm-900">Twitter</button>
+            <button class="button button-small button-border icon-left ion-social-facebook button-positive-900">Facebook</button>
+        </div>
     </ion-content>
-	
 </ion-view>

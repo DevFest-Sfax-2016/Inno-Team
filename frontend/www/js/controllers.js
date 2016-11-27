@@ -3,7 +3,7 @@
 
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $ionicPopover,$ionicPopup, $timeout) {
+.controller('AppCtrl', function($scope, $ionicModal, $ionicPopover, $timeout) {
     // Form data for the login modal
     $scope.loginData = {};
     $scope.isExpanded = false;
@@ -85,54 +85,26 @@ angular.module('starter.controllers', [])
             fabs[0].remove();
         }
     };
-
-/////////////////////////////////Ashref///////////////
-    $scope.showAlertEchec = function(msg) {
-    var alertPopup = $ionicPopup.alert({
-    title: 'ERROR',
-    template: msg
-    });
-  };
-
-
-  /////////////////////////////////Ashref///////////////
-
 })
-/////////////////////////////////Ashref///////////////
-.controller('LoginCtrl', function($scope,$rootScope,$http, $timeout,$location, $stateParams, ionicMaterialInk) {
+
+.controller('LoginCtrl', function($scope,$http, $timeout, $stateParams, ionicMaterialInk) {
     $scope.$parent.clearFabs();
     $timeout(function() {
         $scope.$parent.hideHeader();
     }, 0);
     ionicMaterialInk.displayEffect();
     $scope.test=function(){
-      $scope.users = {};
-
-
-
-
-$http.get('http://ec2-54-201-148-167.us-west-2.compute.amazonaws.com/blood/user/getUserByMailAndPass.php?mail='+$scope.maill+'&pass='+$scope.pass).
-		        then(function(response) {
-		            $scope.users = response.data;
-
-
-
-
-
-		if($scope.users.length!=0){
-	$rootScope.mail = $scope.users[0].mail;
-
-			$location.path('/app/profile');
-		}else{
-$scope.showAlertEchec('User Not Found');
-		}
-    console.log($rootScope.mail);
-
-
-		});
+        $http.get("http://myeducation.netau.net/affiche.php?action=get_alladmin")
+           .success(
+            function(dat){
+             console.log(dat);
+                        }).error(function(dat) {
+                    
+                        console.log("http request failed");
+             });
     }
 })
-/////////////////////////////////Ashref///////////////
+
 .controller('FriendsCtrl', function($scope, $stateParams, $timeout, ionicMaterialInk, ionicMaterialMotion) {
     // Set Header
     $scope.$parent.showHeader();
@@ -211,7 +183,7 @@ $scope.showAlertEchec('User Not Found');
                         console.log("http request failed");
              });
     }
-
+    
 
 })
 

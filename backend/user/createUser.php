@@ -1,19 +1,21 @@
 <?php $link = mysqli_connect("localhost", "root", "semah1992", "bdachref");
  header("Access-Control-Allow-Origin: *");
-
+$requestdata = file_get_contents("php://input");
 $request = json_decode($requestdata);
- 
-$nom= $request['nom'];
-$prenom= $request['prenom'];
-$ville= $request['ville'];
-$pays= $request['pays'];
-$tel= $request['tel'];
-$type_sang= $request['type_sang'];
-$datenaiss= $request['datenaiss'];
-$alcool= $request['alcool'];
-$fumeur= $request['fumeur'];
-$mail= $request['mail'];
-$pwd  = $request['pwd'];
+  $_POST = json_decode(file_get_contents('php://input'), true);
+
+  
+$nom= $_POST['nom'];
+$prenom= $_POST['prenom'];
+$ville= $_POST['ville'];
+$pays= $_POST['pays'];
+$tel= $_POST['tel'];
+$type_sang= $_POST['type_sang'];
+$datenaiss= $_POST['datenaiss'];
+$alcool= $_POST['alcool'];
+$fumeur= $_POST['fumeur'];
+$mail= $_POST['mail'];
+$pwd  = $_POST['pwd'];
 
     $sql = 'INSERT INTO patience (id,nom,prenom,ville,pays,tel,type_sang,datenaiss,alcool,fumeur,mail,pwd) values 	("","' . $nom . '","' . $prenom . '","' .$ville . '","'.$pays.'","'.$tel.'","'.$type_sang.'","'.$datenaiss.'","'.$alcool.'","'.$fumeur.'","'.$mail.'","'.$pwd.'")';
    

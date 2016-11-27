@@ -104,19 +104,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
         }
     })
 
-	    .state('app.signup', {
-        url: '/signup',
-        views: {
-            'menuContent': {
-                templateUrl: 'templates/signup.html',
-                controller: 'LoginCtrl'
-            },
-            'fabContent': {
-                template: ''
-            }
-        }
-    })
-
     .state('app.profile', {
         url: '/profile',
         views: {
@@ -139,4 +126,3 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/app/login');
 });
-
