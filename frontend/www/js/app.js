@@ -116,7 +116,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
             }
         }
     })
-	
+
     .state('app.profile', {
         url: '/profile',
         views: {
