@@ -1,24 +1,26 @@
 <ion-view view-title="Login" align-title="left">
+ <div class="row responsive-sm padding remvoeBP">
+
     <ion-content>
                <div class="list">
                           <label class="item item-input item-floating-label">
                             <span class="input-label">First Name</span>
-                            <input type="text" placeholder="First Name">
+                            <input type="text" placeholder="First Name" ng-model="fname">
                           </label>
 
                           <label class="item item-input item-floating-label">
                             <span class="input-label">Last Name</span>
-                            <input type="text" placeholder="Last Name">
+                            <input type="text" placeholder="Last Name" ng-model="lname">
                           </label>
 
                           <label class="item item-input item-floating-label">
                             <span class="input-label">City</span>
-                            <input type="text" placeholder="City">
+                            <input type="text" placeholder="City" ng-model="city">
                           </label>
 
                           <label class="item item-input item-floating-label">
                             <span class="input-label">Tel Number</span>
-                            <input type="text" placeholder="Tel Number">
+                            <input type="text" placeholder="Tel Number" ng-model="telnumber">
                           </label>
 <br/>
                           <div class="list">
@@ -27,7 +29,7 @@
                                           <div class="input-label">
                                             Blood Type
                                           </div>
-                                          <select>
+                                          <select ng-model="bloodtype">
                                             <option>O+</option>
                                             <option selected>O-</option>
                                             <option>A+</option>
@@ -79,18 +81,19 @@
                <label class="item item-input item-floating-label">
 
                             <span class="input-label">Mail</span>
-                            <input type="text" placeholder="Mail">
+                            <input type="text" placeholder="Mail" ng-model="mail">
                           </label>
 
                            <label class="item item-input item-floating-label">
 
                             <span class="input-label">Password</span>
-                            <input type="password" placeholder="Password">
+                            <input type="password" placeholder="Password" ng-model="pwd">
                           </label>
 
-                              <button class="button button-block button-positive">
+                              <button  ng-click="ajouter()"class="button button-block button-positive">
                                 Submit
                               </button>
                                     
     </ion-content>
+    </div>
 </ion-view>

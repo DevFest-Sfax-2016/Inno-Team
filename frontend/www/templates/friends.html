@@ -1,38 +1,41 @@
-<ion-view view-title="Friends">
+<ion-view view-title="Request Blood">
     <ion-content ng-class="{expanded:isExpanded}">
-        <div class="content has-header">
-            <div class="list animate-fade-slide-in-right">
-                <a href="#/app/profile" class="item item-avatar item-icon-right">
-                    <img src="img/jon-snow.jpg">
-                    <h2>Jon Snow</h2>
-                    <p>Da illest illegitimate</p>
-                    <i class="icon ion-chatbubble muted"></i>
-                </a>
-                <a href="#/app/profile" class="item item-avatar item-icon-right">
-                    <img src="img/daenerys.jpg">
-                    <h2>Daenerys Targaryen</h2>
-                    <p>Dragon mommy</p>
-                    <i class="icon ion-chatbubble muted"></i>
-                </a>
-                <a href="#/app/profile" class="item item-avatar item-icon-right">
-                    <img src="img/arya.jpg">
-                    <h2>Arya Stark</h2>
-                    <p>Is Chuck Norris' fear</p>
-                    <i class="icon ion-chatbubble muted"></i>
-                </a>
-                <a href="#/app/profile" class="item item-avatar item-icon-right">
-                    <img src="img/sansa.jpg">
-                    <h2>Sansa Stark</h2>
-                    <p>&amp; Joffrey <strike>sitting</strike> sat in a tree</p>
-                    <i class="icon ion-chatbubble muted"></i>
-                </a>
-                <a href="#/app/profile" class="item item-avatar item-icon-right">
-                    <img src="img/tyrion.jpg">
-                    <h2>Tyrion Lannister</h2>
-                    <p>B.A.M.F. imp</p>
-                    <i class="icon ion-chatbubble muted"></i>
-                </a>
+        <div class="tabs tabs-dark tabs-icon-top static">
+            <a ui-sref="app.activity" class="tab-item">
+                <i class="icon ion-android-add-circle"></i> Donate
+            </a>
+            <a ui-sref="app.friends" class="tab-item">
+                <i class="icon ion-waterdrop"></i> Take
+            </a>
+            <a ui-sref="app.gallery" class="tab-item">
+                <i class="icon ion-gear-a"></i> Settings
+            </a>
+        </div>
+        <h4 class="content padding double-padding-x">Blood Request</h4>
+        <div class="list animate-fade-slide-in-right">
+            <div ui-sref="app.gallery" class="card stable-bg ink ink-dark">
+                <div class="item item-avatar item-text-wrap">
+                    <span class="avatar" style="background-image: url('img/jon-snow.jpg');"></span>
+                    <strong>Rio de Jeinero</strong> Blood Bank.
+                    <div class="card-footer text-right">
+                        <!--<i class="icon ion-arrow-up-c positivearrow"></i> <strong> High </strong>-->
+                        <i class="icon ion-medkit customMedkits"></i> <strong class="customStrong">24 Available</strong>
+                        <div class="pull-left">
+                            <i class="icon ion-location"></i> Rue Belvadure
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+        <script id="my-modal.html" type="text/ng-template">
+          <ion-modal-view>
+            <ion-header-bar>
+              <h1 class="title">My Modal title</h1>
+            </ion-header-bar>
+            <ion-content>
+              Hello!
+            </ion-content>
+          </ion-modal-view>
+        </script>
     </ion-content>
 </ion-view>

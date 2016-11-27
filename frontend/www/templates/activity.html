@@ -1,55 +1,76 @@
-<ion-view view-title="Activity">
+<ion-view view-title="Donate Blood">
     <ion-content ng-class="{expanded:isExpanded}" class="animate-fade-slide-in">
-        <div class="item card-item">
-            <div ui-sref="app.gallery" class="card stable-bg ink ink-dark">
-                <div class="item item-avatar item-text-wrap">
-                    <span class="avatar" style="background-image: url('img/jon-snow.jpg');"></span>
-                    <strong>Jon Snow</strong> knows nothing.
-                    <div class="card-footer text-right">
-                        <i class="icon ion-chatbubbles positive"></i> 6
-                        <i class="icon ion-heart assertive"></i> 23
-                        <div class="pull-left">
-                            <i class="icon ion-clock"></i> just now
+    <ion-refresher
+    pulling-text="Pull to refresh..."
+    on-refresh="doRefresh()">
+  </ion-refresher>
+        <div   class="tabs tabs-dark tabs-icon-top static">
+            <a ui-sref="app.activity" class="tab-item">
+                <i class="icon ion-android-add-circle"></i> Donate
+            </a>
+            <a ui-sref="app.friends" class="tab-item">
+                <i class="icon ion-waterdrop"></i> Take
+            </a>
+            <a ui-sref="app.gallery" class="tab-item">
+                <i class="icon ion-gear-a"></i> Settings
+            </a>
+        </div>
+        <div ng-hide="hideFirst">
+            <h4 class="content padding double-padding-x" >Blood Request</h4>
+            <div ></div>
+            <div class="list animate-fade-slide-in-right" >
+                <div  class="card stable-bg ink ink-dark" ng-repeat= "it in banks" >
+                    <div class="cardColor" ng-click="pass(item)" >
+                        <span class="avatar" style="background-image: url('{{it.img}}');position: inherit;float: right;"></span>
+                        <strong style=" padding-top: 26px; padding-left: 10px; position: absolute; ">{{it.name}}</strong> Blood Bank.
+                        <div class="card-footer text-right" style=" position: inherit; margin-top: 40px; ">
+                            <i class="icon ion-arrow-up-c positivearrow"></i> <strong> {{it.priority}} </strong>
+                            <i class="icon ion-medkit customMedkit"></i> <strong class="customStrong">{{it.qte}}</strong>
+                            <div class="pull-left">
+                                <i class="icon ion-location"></i> {{it.adresse}}
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="item card-item">
-            <div ui-sref="app.gallery" class="card stable-bg ink ink-dark">
-                <div class="item item-avatar item-text-wrap">
-                    <span class="avatar" style="background-image: url('img/tyrion.jpg');"></span>
-                    <strong>Tyrion Lannister</strong> says "Perhaps that is the secret. It is not what we do, so much as why we do it."
-                    <div class="card-footer text-right">
-                        <i class="icon ion-chatbubble positive"></i> 2
-                        <i class="icon ion-heart assertive"></i> 4
-                        <div class="pull-left">
-                            <i class="icon ion-clock"></i> 12 mins ago
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div ng-show="showBookInfo">
+        <ion-item>
+  <ion-label>Start Time</ion-label>
+  <input type="date" id="">
+</ion-item>
+<ion-item>
+  <ion-label>Start Time</ion-label>
+  <input type="time" >
+  
+</ion-item>
+            <ul class="list">
+
+  <li class="item item-toggle">
+     HTML5
+     <label class="toggle toggle-assertive">
+       <input type="checkbox">
+       <div class="track">
+         <div class="handle"></div>
+       </div>
+     </label>
+  </li>
+
+  <li class="item item-toggle">
+     HTML5
+     <label class="toggle toggle-assertive">
+       <input type="checkbox">
+       <div class="track">
+         <div class="handle"></div>
+       </div>
+     </label>
+  </li>
+
+</ul>
+<div class="bar bar-assertive" style="    margin-left: 10%;    width: 80%;">
+  <h1 class="title">bar-assertive</h1>
+</div>
         </div>
-        <div class="item card-item">
-            <div ui-sref="app.gallery" class="card stable-bg ink ink-dark">
-                <div class="item item-avatar item-text-wrap">
-                    <span class="avatar" style="background-image: url('img/sansa.jpg');"></span>
-                    <strong>Sansa Stark</strong> added a gallery <strong>Pretending to be Anna from Frozen</strong> ...
-                    <a class="image"><img src="img/sansa-snowcastle.png">
-                    </a>
-                    <a class="image"><img src="img/sansa-snowcastle2.jpg">
-                    </a>
-                    <a class="image"><img src="img/sansa-snowcastle3.jpg">
-                    </a>
-                    <div class="card-footer text-right">
-                        <i class="icon ion-chatbubble positive"></i> 2
-                        <i class="icon ion-heart assertive"></i> 4
-                        <div class="pull-left">
-                            <i class="icon ion-clock"></i> 3 hrs ago
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
     </ion-content>
 </ion-view>

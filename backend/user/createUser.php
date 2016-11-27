@@ -1,6 +1,6 @@
 <?php $link = mysqli_connect("localhost", "root", "semah1992", "bdachref");
  header("Access-Control-Allow-Origin: *");
-$requestdata = file_get_contents("php://input");
+
 $request = json_decode($requestdata);
  
 $nom= $request['nom'];

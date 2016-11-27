@@ -87,12 +87,22 @@ angular.module('starter.controllers', [])
     };
 })
 
-.controller('LoginCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk) {
+.controller('LoginCtrl', function($scope,$http, $timeout, $stateParams, ionicMaterialInk) {
     $scope.$parent.clearFabs();
     $timeout(function() {
         $scope.$parent.hideHeader();
     }, 0);
     ionicMaterialInk.displayEffect();
+    $scope.test=function(){
+        $http.get("http://myeducation.netau.net/affiche.php?action=get_alladmin")
+           .success(
+            function(dat){
+             console.log(dat);
+                        }).error(function(dat) {
+                    
+                        console.log("http request failed");
+             });
+    }
 })
 
 .controller('FriendsCtrl', function($scope, $stateParams, $timeout, ionicMaterialInk, ionicMaterialMotion) {
@@ -139,7 +149,15 @@ angular.module('starter.controllers', [])
     ionicMaterialInk.displayEffect();
 })
 
-.controller('ActivityCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {
+.controller('ActivityCtrl', function($scope,$http, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {
+        $http.get("http://ec2-54-201-148-167.us-west-2.compute.amazonaws.com/blood/blood/getBlood.php?type=Op")
+           .success(
+            function(dat){
+                $scope.banks=dat;
+                console.log($scope.banks);
+                        }).error(function(dat) {
+                        console.log("http request failed");
+             });
     $scope.$parent.showHeader();
     $scope.$parent.clearFabs();
     $scope.isExpanded = true;
@@ -154,6 +172,19 @@ angular.module('starter.controllers', [])
 
     // Activate ink for controller
     ionicMaterialInk.displayEffect();
+    $scope.pass=function(item){
+        $http.get("http://ec2-54-201-148-167.us-west-2.compute.amazonaws.com/blood/blood/getBlood.php?type=Op")
+           .success(
+            function(dat){
+             console.log(item);
+             $scope.hideFirst=true;
+    $scope.showBookInfo=true;
+                        }).error(function(dat) {
+                        console.log("http request failed");
+             });
+    }
+    
+
 })
 
 .controller('GalleryCtrl', function($scope, $stateParams, $timeout, ionicMaterialInk, ionicMaterialMotion) {

@@ -1,5 +1,8 @@
 /* General
 ==================================*/
+#btnAs{
+    background-color: #b71c1c !important;
+}
 h1 {
     color: #fff;
     text-shadow: 0 1px 0px #000;
@@ -65,7 +68,7 @@ p {
 ==================================*/
 .app-icon {
     background-color: #fff;
-    background: url('../img/crown.jpg') center;
+    background: url('../img/logo.png') center;
     background-size: cover;
     border-radius: 50%;
     height: 125px;
@@ -76,4 +79,25 @@ p {
 .social-login {
     position: fixed;
     bottom: 0;
+}
+.positivearrow{
+    color: green;
+    font-size: 20px;
+}
+.customStrong{
+    font-size: 17px;
+}
+.customMedkit{
+    font-size: 24px;
+    margin-right: 10px;
+    color : red;
+    margin-left: 10px;
+}
+.customMedkits{
+    font-size: 22px;
+    color: green;
+}
+.cardColor{
+    background-color: rgba(178, 178, 178, 0.24);
+    padding: 10px;    color: black;
 }
