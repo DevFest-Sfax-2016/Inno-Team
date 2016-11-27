@@ -86,16 +86,19 @@ angular.module('starter.controllers', [])
         }
     };
 
-
+/////////////////////////////////Ashref///////////////
     $scope.showAlertEchec = function(msg) {
     var alertPopup = $ionicPopup.alert({
-    title: 'Erreur',
+    title: 'ERROR',
     template: msg
     });
   };
 
-})
 
+  /////////////////////////////////Ashref///////////////
+
+})
+/////////////////////////////////Ashref///////////////
 .controller('LoginCtrl', function($scope,$rootScope,$http, $timeout,$location, $stateParams, ionicMaterialInk) {
     $scope.$parent.clearFabs();
     $timeout(function() {
@@ -117,18 +120,19 @@ $http.get('http://ec2-54-201-148-167.us-west-2.compute.amazonaws.com/blood/user/
 
 
 		if($scope.users.length!=0){
-	$rootScope.mail = $scope.users[0].mail_user;
+	$rootScope.mail = $scope.users[0].mail;
 
 			$location.path('/app/profile');
 		}else{
 $scope.showAlertEchec('User Not Found');
 		}
+    console.log($rootScope.mail);
 
 
 		});
     }
 })
-
+/////////////////////////////////Ashref///////////////
 .controller('FriendsCtrl', function($scope, $stateParams, $timeout, ionicMaterialInk, ionicMaterialMotion) {
     // Set Header
     $scope.$parent.showHeader();
