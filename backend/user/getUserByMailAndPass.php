@@ -21,6 +21,7 @@ while ($row = mysql_fetch_array($fetch, MYSQL_ASSOC)) {
 		  $row_array['fumeur'] = $row['fumeur'];
 		  $row_array['mail'] = $row['mail'];
 		  $row_array['pwd'] = $row['pwd'];
+		   $row_array['type'] = $row['type'];
 
     array_push($return_arr,$row_array);
 }
